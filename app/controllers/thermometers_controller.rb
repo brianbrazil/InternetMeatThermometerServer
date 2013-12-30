@@ -1,6 +1,6 @@
 class ThermometersController < ApplicationController
   skip_before_action :verify_authenticity_token
-  before_action :set_thermometer, only: [:show, :edit, :update, :destroy, :create]
+  before_action :set_thermometer, only: [:show, :edit, :update, :destroy ]
 
   # GET /thermometers
   # GET /thermometers.json
