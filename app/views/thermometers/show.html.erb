@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Device ID:</strong>
+  <%= @thermometer.deviceid %>
+</p>
+
+<p>
+  <strong>Temperature:</strong>
+  <%= @thermometer.temperature %>
+</p>
+
+<p>
+  <strong>Updated at:</strong>
+  <%= @thermometer.updated_at %>
+</p>
+
+<%= link_to 'Edit', edit_thermometer_path(@thermometer) %> |
+<%= link_to 'Back', thermometers_path %>
