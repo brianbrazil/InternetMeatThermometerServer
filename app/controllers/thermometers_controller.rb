@@ -1,6 +1,7 @@
 class ThermometersController < ApplicationController
   skip_before_action :verify_authenticity_token
   before_action :set_thermometer, only: [:show, :edit, :update, :destroy ]
+  before_action :set_cache_buster
 
   # GET /thermometers
   # GET /thermometers.json
@@ -71,5 +72,11 @@ class ThermometersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def thermometer_params
       params.require(:thermometer).permit(:temperature, :deviceid)
+    end
+
+    def set_cache_buster
+      response.headers["Cache-Control"] = "no-cache, no-store, max-age=0, must-revalidate"
+      response.headers["Pragma"] = "no-cache"
+      response.headers["Expires"] = "Fri, 01 Jan 1990 00:00:00 GMT"
     end
 end
